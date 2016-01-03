@@ -11,7 +11,24 @@ A couple ways to use this container:
 ```
 docker run -it jonathanporta/steamcmd \
   +login anonymous \
-  +force_install_dir ../srv \
+  +force_install_dir /srv \
   +app_update 376030 validate \
   +quit
+```
+
+### Use this as a base image for building a server container
+```
+# Dockerfile
+FROM jonathanporta/steamcmd
+
+# Install Ark server files
+RUN ./steamcmd.sh +login anonymous \
+  +force_install_dir /srv \
+  +app_update 376030 validate \
+  +quit
+
+# Set the server executable as the entrypoint
+ENTRYPOINT ["/srv/ShooterGame/Binaries/Linux/ShooterGameServer"]
+
+...
 ```
