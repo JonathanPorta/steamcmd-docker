@@ -1,4 +1,4 @@
-# steamcmd in a Docker container
+# steamcmd in a Docker container [![Docker Repository on Quay](https://quay.io/repository/jonathanporta/steamcmd/status "Docker Repository on Quay")](https://quay.io/repository/jonathanporta/steamcmd)
 Use this as a base container when you need a working install of steamcmd.
 
 # Example Usage
